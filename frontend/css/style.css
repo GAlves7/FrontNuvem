@@ -1,0 +1,31 @@
+/* ==== Estilos globais ==== */
+
+/* Define a fonte padrão do site e remove as margens padrão da página.
+   Também coloca uma cor de fundo escura em todo o site. */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #191919;
+}
+
+/* Remove o sublinhado padrão dos links (a tag <a>).
+   Assim o link fica mais limpo visualmente. */
+a {
+    text-decoration: none;
+}
+
+/* Deixa todos os botões com o cursor de "mãozinha" quando o usuário passa com o mouse.
+   Isso indica que o botão é clicável. */
+button {
+    cursor: pointer;
+}
+
+/* ==== Variáveis de cores ==== */
+/* Aqui são criadas variáveis de cores para facilitar a manutenção do site.
+   Se quiser mudar o tema, basta alterar aqui e todos os elementos que usam
+   essas variáveis serão atualizados automaticamente. */
+:root {
+    --cor-principal: #fff297; /* Cor principal do site (botões, textos destacados, etc.) */
+    --cor-fundo: #191919;     /* Cor de fundo global do site */
+    --cor-caixa: #272727;     /* Cor usada em cards, caixas e áreas secundárias */
+}

@@ -1,0 +1,145 @@
+/* ================================
+   CONTAINER PRINCIPAL DA PÁGINA
+   Centraliza o conteúdo vertical e horizontalmente
+   ================================ */
+.recuperar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* altura mínima para posicionar no centro */
+}
+
+/* ================================
+   CAIXA DO FORMULÁRIO DE RECUPERAÇÃO
+   Fundo, padding, sombras e largura
+   ================================ */
+.recuperar-box {
+    background-color: var(--cor-caixa);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* ================================
+   TÍTULO DO FORMULÁRIO
+   ================================ */
+.recuperar-box h2 {
+    color: var(--cor-principal);
+    margin-bottom: 45px;
+}
+
+/* ================================
+   PARÁGRAFOS EXPLICATIVOS
+   ================================ */
+.recuperar-box p {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* ================================
+   CAMPOS DE INPUT DO FORMULÁRIO
+   ================================ */
+.recuperar-box input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* ================================
+   BOTÃO PADRÃO DO FORMULÁRIO
+   ================================ */
+.recuperar-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Hover do botão de envio */
+.recuperar-box button:hover {
+    background-color: #ffd700;
+}
+
+/* ================================
+   BOTÃO "ENVIAR" ESTILIZADO
+   ================================ */
+.btn-enviar {
+    display: inline-block;
+    width: 95%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Hover do botão */
+.btn-enviar:hover {
+    background-color: #ffd700;
+}
+
+/* ================================
+   CAMPO DE SENHA COM ÍCONE
+   ================================ */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Input de senha com espaço para o ícone */
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* espaço reservado para o ícone */
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Ícone de "mostrar senha" dentro do campo */
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 44%;
+    transform: translateY(-50%);
+    color: #191919;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Hover no ícone */
+.password-container i:hover {
+    color: var(--cor-principal);
+}
+
+/* ================================
+   RESPONSIVIDADE
+   Ajusta a caixa em telas menores
+   ================================ */
+@media (max-width: 600px) {
+    .recuperar-box {
+        width: 95%;
+        padding: 30px 20px;
+    }
+}

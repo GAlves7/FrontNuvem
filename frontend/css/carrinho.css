@@ -1,0 +1,194 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.carrinho-container {
+    width: 97.5%;            /* Quase a largura total da tela, evitando overflow */
+    padding: 20px;           /* Espaçamento interno */
+}
+
+/* Título da página */
+.carrinho-container h2 {
+    color: #ffffff;          /* Cor branca */
+    font-size: 1.6rem;       /* Tamanho do título */
+    font-weight: 600;        /* Peso da fonte */
+    margin-bottom: 25px;     /* Espaço abaixo */
+    text-align: left;        /* Alinhado à esquerda */
+    margin-top: 10px;        /* Espaço acima */
+}
+
+/* Container dos cards (coluna) */
+.carrinho-cards {
+    display: flex;           /* Layout em flex */
+    flex-direction: column;  /* Um card abaixo do outro */
+    gap: 20px;               /* Distância entre os cards */
+}
+
+/* ===== CARD DO CARRINHO ===== */
+.card-carrinho {
+    display: flex;                       /* Layout lado a lado */
+    gap: 20px;                           /* Distância entre imagem e infos */
+    background-color: #222;              /* Fundo escuro */
+    padding: 15px;                       /* Espaçamento interno */
+    border-radius: 12px;                 /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);/* Sombra suave */
+    align-items: center;                 /* Alinha conteúdo verticalmente */
+}
+
+/* Área que segura a imagem */
+.card-img-placeholder {
+    width: 120px;            /* Largura da área da imagem */
+    height: 120px;           /* Altura */
+    background-color: #111;  /* Fundo escuro caso não tenha foto */
+    border-radius: 10px;     /* Arredondamento */
+    overflow: hidden;        /* Esconde partes excedentes da imagem */
+    flex-shrink: 0;          /* Não deixa a imagem encolher */
+}
+
+.card-img-placeholder img {
+    width: 100%;              /* Imagem preenche o espaço */
+    height: 100%;             /* Preenche a altura também */
+    object-fit: cover;        /* Mantém o corte proporcional */
+}
+
+/* Bloco de informações do produto */
+.card-info {
+    display: flex;
+    flex-direction: column;   /* Organiza os textos verticalmente */
+    gap: 8px;                 /* Espaço entre cada linha */
+    flex: 1;                  /* Ocupa todo o espaço restante */
+}
+
+/* Nome do produto */
+.card-info h3 {
+    margin: 0;
+    color: #fff;              /* Texto branco */
+}
+
+/* Informações adicionais */
+.card-info p {
+    margin: 0;
+    color: #fff297;           /* Cor amarela suave */
+    font-size: 0.95rem;
+}
+
+/* Quantidade */
+.card-quantidade {
+    display: flex;            /* Layout horizontal */
+    align-items: center;      /* Centraliza verticalmente */
+    gap: 10px;                /* Distância entre botões e número */
+    margin-top: 10px;
+}
+
+/* Botões de + e - */
+.btn-qtd {
+    width: 30px;
+    height: 30px;
+    background-color: #444;   /* Cinza escuro */
+    color: #fff;              /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;          /* Mostra mãozinha */
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-quantidade:hover {
+    background-color: #666;   /* Cor mais clara ao passar o mouse */
+}
+
+/* Número da quantidade */
+.qtd-num {
+    min-width: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 15px;
+}
+
+/* Subtotal */
+.subtotal {
+    font-weight: bold;        /* Destaque no subtotal */
+}
+
+/* Botão remover item */
+.btn-remover {
+    background-color: #ff4d4d; /* Vermelho */
+    color: #fff;               /* Branco */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-end;      /* Joga o botão para a direita */
+    margin-top: 10px;
+}
+
+.btn-remover:hover {
+    background-color: #ff1a1a; /* Hover mais escuro */
+}
+
+/* Total do carrinho */
+.carrinho-total {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+/* ===== BOTÃO RESERVAR ===== */
+.btn-reservar {
+    width:50%;                    /* Largura de metade do container */
+    margin-top: 15px;
+    background: #fff297;          /* Amarelo claro */
+    color: #191919;               /* Texto escuro */
+    border: none;
+    padding: 14px 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;        /* Animação suave */
+}
+
+.btn-reservar:hover {
+    background: #ffcd2a;          /* Amarelo mais forte */
+    transform: scale(1.02);       /* Efeito de zoom */
+}
+
+.btn-reservar:active {
+    transform: scale(0.98);       /* Leve contração ao clicar */
+}
+
+/* CORREÇÃO UNIVERSAL DO OVERFLOW HORIZONTAL */
+html, body {
+    max-width: 100%;              /* Impede estourar a tela */
+    overflow-x: hidden;           /* Remove scroll lateral */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+
+    /* Card vira um bloco vertical no mobile */
+    .card-carrinho {
+        flex-direction: column;
+        align-items: flex-start;  /* Alinha à esquerda */
+    }
+
+    .card-img-placeholder {
+        width: 100%;              /* Imagem ocupa toda largura */
+        height: 150px;            /* Altura maior */
+    }
+
+    .card-info {
+        width: 100%;
+    }
+
+    .card-quantidade {
+        margin-top: 10px;
+    }
+
+    /* Botão remover fica alinhado à esquerda */
+    .btn-remover {
+        align-self: flex-start;
+    }
+}

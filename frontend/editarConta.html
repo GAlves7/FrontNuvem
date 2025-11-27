@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Torna o layout responsivo em celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Editar conta - Lumine Empório</title>
+
+    <!-- Icones (usuário, engrenagem, logout...) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS globais do projeto -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/editarConta.css">
+</head>
+<body>
+
+    <!-- Área onde o HEADER será carregado dinamicamente via include.js -->
+    <div id="headerArea"></div>
+
+    <!-- Área onde o modal de login será carregado -->
+    <div id="modalLoginArea"></div>
+
+    <!-- Container principal da página de edição -->
+    <div class="editar-container">
+
+        <!-- Título da página -->
+        <h2 class="editar-titulo">Editar Conta</h2>
+
+        <!-- FORMULÁRIO DE EDIÇÃO -->
+        <form class="editar-form">
+
+            <!-- Nome completo -->
+            <div class="form-group">
+                <label>Nome completo:</label>
+                <input type="text" id="nomeCompleto">
+            </div>
+
+            <!-- Telefone -->
+            <div class="form-group">
+                <label>Telefone:</label>
+                <input type="text" id="telefone" maxlength="15">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="email">
+            </div>
+
+            <!-- Nova senha -->
+            <div class="form-group">
+                <label>Nova senha:</label>
+                <input type="password" id="senha">
+            </div>
+
+            <!-- Repetir nova senha -->
+            <div class="form-group">
+                <label>Repita a nova senha:</label>
+                <input type="password" id="senha2">
+            </div>
+
+            <!-- Botão de salvar -->
+            <button type="button" id="btnSalvar" class="btn salvar-btn">
+                Salvar alterações
+            </button>
+
+        </form>
+    </div>
+
+    <!-- Rodapé carregado via include.js -->
+    <div id="footerArea"></div>
+
+    <!-- Importa include.js para carregar header, footer e modal de login -->
+    <script type="module">
+        import { loadComponent } from "./js/include.js";
+        loadComponent("headerArea", "header.html", "js/header.js");
+        loadComponent("footerArea", "footer.html");
+        loadComponent("modalLoginArea", "modalLogin.html", "js/login.js");
+    </script>
+
+    <!-- Axios → usado para comunicação com o backend (Spring Boot) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Script com a lógica de editar conta -->
+    <script type="module" src="js/editarConta.js"></script>
+
+</body>
+</html>

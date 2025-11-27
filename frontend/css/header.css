@@ -1,0 +1,224 @@
+/* =============================== */
+/*            HEADER               */
+/* =============================== */
+
+/* Barra fixa no topo do site */
+header {
+    background-color: var(--cor-fundo);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 10px 40px;
+    position: sticky;     /* Fica fixo ao rolar */
+    top: 0;
+    z-index: 10;          /* Fica acima do conteúdo */
+}
+
+/* Container principal do header: logo + busca + ícones */
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =============================== */
+/*              LOGO               */
+/* =============================== */
+
+.logo img {
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* =============================== */
+/*     CENTRO: BUSCA & LINKS       */
+/* =============================== */
+
+.center-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Necessário para posicionar os resultados */
+}
+
+/* Campo de busca fechado (estado inicial) */
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--cor-caixa);
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--cor-caixa);
+    padding-left: 2px;
+    width: 60px;                 /* Tamanho inicial pequeno */
+    transition: width 0.4s ease; /* Animação ao abrir */
+}
+
+/* Quando está ativo (focado) — expande */
+.search-box.active {
+    width: 400px;
+}
+
+/* Botão da lupa */
+.search-box button {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-principal);
+    padding: 8px 10px;
+    transition: color 0.2s;
+}
+
+.search-box button:hover {
+    color: #000;
+}
+
+/* Input da pesquisa: invisível quando fechado */
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    width: 100%;
+    font-size: 0.95rem;
+    background-color: var(--cor-caixa);
+    color: var(--cor-principal);
+    opacity: 0;                   /* Some quando inativo */
+    transition: opacity 0.3s ease;
+}
+
+/* Torna o input visível apenas quando expandido */
+.search-box.active input {
+    opacity: 1;
+}
+
+/* Link "Sobre" e Instagram */
+.sobre,
+.social-instagram {
+    color: var(--cor-principal);
+    transition: color 0.2s;
+}
+
+.sobre:hover,
+.social-instagram:hover {
+    color: #000;
+}
+
+/* =============================== */
+/*          ÍCONES À DIREITA       */
+/* =============================== */
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botões: tema, carrinho, perfil */
+.icons button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--cor-principal);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.icons button:hover {
+    color: #000;
+}
+
+/* Imagem do avatar do usuário */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5px solid var(--cor-principal);
+}
+
+/* =============================== */
+/*     RESULTADOS DA PESQUISA      */
+/* =============================== */
+
+.search-results {
+    position: absolute;
+    top: 45px;               /* Logo abaixo do search-box */
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-caixa);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;           /* Começa oculto */
+    flex-direction: column;
+    z-index: 20;
+    padding: 5px 0;
+}
+
+/* Cada card de resultado */
+.search-results .result-card {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hover no card */
+.search-results .result-card:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Estilo do botão “Ver todos” (se usar futuramente) */
+.search-results .ver-todos {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    color: #fff297;
+}
+
+/* Imagem do produto no resultado */
+.search-results .result-card img.card-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Nome do produto */
+.search-results .result-card strong {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Descrição */
+.search-results .result-card span:nth-of-type(1) {
+    color: #FFFFFF;
+}
+
+/* Preço */
+.search-results .result-card span:nth-of-type(2) {
+    font-weight: bold;
+    color: #fff297;
+}
+
+/* =============================== */
+/*       BADGE DO CARRINHO         */
+/* =============================== */
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none; /* Só aparece se houver itens */
+}
+
+/* Necessário para a badge ficar posicionada corretamente */
+.btn-cart {
+    position: relative;
+}
